@@ -1,0 +1,19 @@
+{
+  "name": "generator-headsup",
+  "version": "0.0.1",
+  "author": "Arijus Šukys <argshook@gmail.com>",
+  "description": "utterly tiny and simple starter pack for JS development",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "webpack",
+    "js",
+    "babel",
+    "es2015"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
