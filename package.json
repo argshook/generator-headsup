@@ -1,6 +1,6 @@
 {
   "name": "generator-headsup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Arijus Šukys <argshook@gmail.com>",
   "description": "utterly tiny and simple starter pack for JS development",
   "repositories": [
