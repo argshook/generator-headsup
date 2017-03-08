@@ -9,3 +9,8 @@ to kick start js development without bullshit
 1. `npm start`
 1. [localhost:8080](http://localhost:8080)
 
+## TODO
+
+* [ ] optional mocha
+* [ ] optional react
+* [ ] hmr?
