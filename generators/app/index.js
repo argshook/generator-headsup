@@ -70,4 +70,9 @@ module.exports = class extends Generator {
 
     this.yarnInstall(devDependencies, { dev: true });
   }
+
+  end() {
+    this.fs.delete(this.destinationPath('.yo-rc.json'));
+  }
 };
+

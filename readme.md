@@ -11,6 +11,8 @@ to kick start js development without bullshit
 
 ## TODO
 
+* [ ] test
 * [ ] optional mocha
 * [ ] optional react
-* [ ] hmr?
+* [ ] optional css (with all the sparkles)
+* [ ] optional hmr?
