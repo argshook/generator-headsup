@@ -38,7 +38,8 @@ module.exports = class extends Generator {
       name: this.answers.name,
       version: '0.0.1',
       scripts: {
-        start: `webpack-dev-server --content-base=src ${SRC}index.js`
+        start: `webpack-dev-server --content-base=src ${SRC}index.js`,
+        build: 'NODE_ENV=prod webpack -p --progress'
       },
       babel: {
         presets: [ 'react', 'es2015', 'stage-0' ]
