@@ -1,33 +1,37 @@
 # `generator-headsup`
 
-kickstart JS development without bullshit just essentials.
+yeoman generator to kickstart JS development with bare essentials and nothing more
 
-### 0. Requirements
+prototype like never before!
 
-[Yarn](https://yarnpkg.com/en/docs/install)
+1. `yarn add global yo generator-headsup`
+1. `yo headsup`
+1. `yarn start`
+1. [localhost:8080](http://localhost:8080)
 
-### 1. Install
+build? `yarn run build`
 
-#### `yarn add global yo generator-headsup`
+> you can of course use `npm`
 
-### 2. Generate
+---
 
-#### `yo headsup`
+# What does it do?
 
-* will ask for project name
-* will run `yarn` to get dev dependencies (usually takes ~10s on my setup)
+after runing `yo headsup`:
 
-### 3. Play
+1. it will ask for project name
+1. it will run `yarn` to get dependencies (my nonfancy setup takes ~10s)
+1. it will create `src/index.js` and `src/index.html` for you to start
 
-#### `npm start`
+## What's behind
 
-[localhost:8080](http://localhost:8080)
+is a bunch of webpack and its dependencies
 
-## What you get
+it's configured to have:
 
-### Goodies
-
-webpack, webpack-dev-server, es2015, stage-0, autoprefixer, postcss (w/ precss a.k.a sass light)
+* dev server and build command
+* babel with es2015, stage-0 and react presets
+* css modules, postcss with precss and autoprefixer
 
 ### File tree:
 
@@ -51,6 +55,6 @@ webpack, webpack-dev-server, es2015, stage-0, autoprefixer, postcss (w/ precss a
 * [ ] test
 * [ ] optional mocha
 * [ ] optional react
-* [ ] optional css (with all the sparkles)
+* [ ] **optional** css (with all the sparkles)
 * [ ] optional hmr?
 
