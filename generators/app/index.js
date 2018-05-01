@@ -22,23 +22,24 @@ module.exports = class extends Generator {
       { title: this.answers.name }
     );
 
-    this.fs.write(`${SRC}index.js`, 'console.log(\'hai\')');
+    const copyFromTo = {
+      _gitignore: '.gitignore',
+      [`${SRC}index.js`]: `${SRC}index.js`,
+      'webpack.config.js': 'webpack.config.js'
+    };
 
-    this.fs.copyTpl(
-      this.templatePath('_gitignore'),
-      this.destinationPath('.gitignore')
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('webpack.config.js'),
-      this.destinationPath('webpack.config.js')
+    Object.entries(copyFromTo).map(([from, to]) =>
+      this.fs.copyTpl(
+        this.templatePath(from),
+        this.destinationPath(to)
+      )
     );
 
     const packageJSON = {
       name: this.answers.name,
       version: '0.0.1',
       scripts: {
-        start: `webpack-dev-server --content-base=src ${SRC}index.js`,
+        start: `webpack-dev-server --content-base=src ${SRC}index.js --mode="development"`,
         build: 'NODE_ENV=prod webpack -p --progress'
       },
       babel: {
@@ -47,12 +48,13 @@ module.exports = class extends Generator {
     };
 
     this.fs.write('package.json', JSON.stringify(packageJSON, null, 2));
-    this.fs.write('.nvmrc', '7');
+    this.fs.write('.nvmrc', '8');
   }
 
   install() {
     const devDependencies = [
       'webpack',
+      'webpack-cli',
       'webpack-dev-server',
       'autoprefixer',
       'autoprefixer-loader',
@@ -69,7 +71,7 @@ module.exports = class extends Generator {
       'style-loader'
     ];
 
-    this.yarnInstall(devDependencies, { dev: true });
+    this.npmInstall(devDependencies, { dev: true });
   }
 
   end() {
